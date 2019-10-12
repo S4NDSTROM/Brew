@@ -5,7 +5,7 @@ let dbConnectString = process.env.DATABASE_URL
   : 'postgresql://postgres:docker@localhost:5432/skinnkylen-db';
 
 const pool = new Pool({
-  connectionString: 'postgresql://postgres:docker@localhost:5432/skinnkylen-db',
+  connectionString: dbConnectString,
 });
 
 const databaseConnect = async () => {
