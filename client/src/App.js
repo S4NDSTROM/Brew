@@ -1,33 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Menu from './components/Menu';
+import Footer from './components/Footer';
 
 function App() {
-  const [test, setTest] = useState([]);
-
-  useEffect(() => {
-    fetch('/test')
-      .then((result) => result.json())
-      .then((result) => setTest(result.test));
-  }, []);
-
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <p>{test}</p>
-      </header>
+      <Menu />
+      <Footer />
     </div>
   );
 }

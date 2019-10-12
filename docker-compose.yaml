@@ -1,0 +1,29 @@
+version: '2'
+
+services:
+  database:
+    image: 'postgres:11.5'
+    container_name: 'skinnkylen-db'
+    networks:
+      - skinnkylen-network
+    ports:
+      - 5432:5432
+    volumes:
+      - ./db/data:/var/lib/postgresql/data
+      - ./db/migration:/var/lib/postgresql/migration
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=skinnkylen-db
+
+  admin:
+    image: 'thajeztah/pgadmin4'
+    container_name: 'skinnkylen-db-admin'
+    networks:
+      - skinnkylen-network
+    ports:
+      - 5050:5050
+
+networks:
+  skinnkylen-network:
+    driver: bridge
