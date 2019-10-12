@@ -7,7 +7,7 @@ if (process.env.DATABASE_URL) {
   dbConnectString = 'postgresql://postgres:docker@localhost:5432/skinnkylen-db';
 }
 
-console.log(dbConnectString);
+console.log('KUKEN', dbConnectString);
 
 const pool = new Pool({
   connectionString: dbConnectString,
