@@ -1,5 +1,11 @@
 const { Pool } = require('pg');
 
+let dbConnectString =
+  'postgresql://postgres:docker@localhost:5432/skinnkylen-db';
+if (process.env.NODE_env === 'production') {
+  dbConnectString = process.env.DATABASE_URL;
+}
+
 const pool = new Pool({
   connectionString: 'postgresql://postgres:docker@localhost:5432/skinnkylen-db',
 });
