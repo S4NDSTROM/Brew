@@ -1,4 +1,4 @@
-const serverPort = 8000;
+const serverPort = process.env.PORT || 8000;
 const http = require('http');
 
 console.log(
