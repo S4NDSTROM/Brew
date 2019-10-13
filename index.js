@@ -1,6 +1,10 @@
 const serverPort = 8000;
 const http = require('http');
 
+console.log(
+  'initing ----------------------------------------------------------------',
+);
+
 const app = require('./server/app');
 
 const server = http.createServer(app);
